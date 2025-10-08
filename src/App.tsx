@@ -55,7 +55,7 @@ function downloadFile(filename: string, content: string, mime = "application/jso
 
 function InsertLine({ 
   onInsert, 
-  isArray, 
+  isArray: _, 
   position 
 }: { 
   onInsert: (position: number) => void; 
@@ -219,7 +219,7 @@ function JsonTree({
                       confirmLabel="Inserir"
                       autoFocus={isArray}
                     />
-                    <Button size="xs" variant="ghost" className="px-2 py-1 text-xs" onClick={() => setShowAddAt(null)}>Cancelar</Button>
+                    <Button size="sm" variant="ghost" className="px-2 py-1 text-xs" onClick={() => setShowAddAt(null)}>Cancelar</Button>
                   </div>
                 </div>
               )}
@@ -302,7 +302,7 @@ function JsonTree({
                 confirmLabel="Adicionar"
                 autoFocus={isArray}
               />
-              <Button size="xs" variant="ghost" className="px-2 py-1 text-xs" onClick={() => setShowAddAt(null)}>Cancelar</Button>
+              <Button size="sm" variant="ghost" className="px-2 py-1 text-xs" onClick={() => setShowAddAt(null)}>Cancelar</Button>
             </div>
           </div>
         )}

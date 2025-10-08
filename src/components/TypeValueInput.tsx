@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
 import { Switch } from "./ui/switch";
 import { Button } from "./ui/button";
 
