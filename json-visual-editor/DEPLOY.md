@@ -10,7 +10,15 @@
 
 ### 2. Configure o vite.config.ts
 
-Adicione a propriedade `base` com o nome do seu repositório:
+Este projeto (repositório informado: `json-visual-editor`) já deve usar:
+
+```ts
+base: '/json-visual-editor/'
+```
+
+Se você clonar este código dentro de outra pasta ou renomear o repositório, ajuste o valor.
+
+Adicione ou confirme a propriedade `base` com o nome do seu repositório:
 
 ```ts
 import { defineConfig } from 'vite'
@@ -20,13 +28,18 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   resolve: { alias: { '@': path.resolve(__dirname, 'src') } },
-  base: '/nome-do-seu-repositorio/', // ⚠️ IMPORTANTE: Substitua pelo nome real!
+  base: '/json-visual-editor/', // ⚠️ ajuste se o nome do repo for diferente
 })
 ```
 
 **Exemplo:** Se seu repositório for `https://github.com/seunome/json-editor`, use:
 ```ts
 base: '/json-editor/',
+```
+
+Para o seu caso atual (`victor-burgarelli/json-visual-editor`):
+```ts
+base: '/json-visual-editor/'
 ```
 
 ### 3. Inicialize o Git e faça o push
