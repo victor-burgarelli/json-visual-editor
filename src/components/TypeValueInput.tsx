@@ -46,6 +46,7 @@ export function TypeValueInput({
   onConfirm,
   confirmLabel = "Adicionar",
   autoFocus = false,
+  compact = false,
 }: {
   value: any;
   type: string;
@@ -54,6 +55,7 @@ export function TypeValueInput({
   onConfirm: () => void;
   confirmLabel?: string;
   autoFocus?: boolean;
+  compact?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -88,7 +90,7 @@ export function TypeValueInput({
   }, [isOpen]);
   
   return (
-    <div className="flex items-center gap-2 mb-2">
+    <div className={"flex items-center gap-2 " + (compact ? "" : "mb-2")}> 
       <div className="relative">
         <button
           ref={buttonRef}
@@ -169,7 +171,7 @@ export function TypeValueInput({
       {type === "array" && (
         <span className="text-muted-foreground text-xs">[ ]</span>
       )}
-      <Button size="sm" onClick={onConfirm}>{confirmLabel}</Button>
+      <Button size="sm" className="leading-none" onClick={onConfirm}>{confirmLabel}</Button>
     </div>
   );
 }
